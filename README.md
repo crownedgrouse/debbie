@@ -28,7 +28,7 @@ tree /path/to/my/debian/structure/
         └── myapp
 ```
 
-(note : a valid DEBIAN package should have more files, like copyright, Man pages, etc... See [Debian policy](https://www.debian.org/doc/debian-policy/).
+(note : a valid DEBIAN package should have more files, like copyright, Man pages, etc... See [Debian policy](https://www.debian.org/doc/debian-policy/)).
 
 Creating a .deb package, in a erl shell, is simple as :
 
