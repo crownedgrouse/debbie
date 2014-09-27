@@ -6,7 +6,7 @@
 
 ``debbie`` is an Erlang module that creates DEBIAN binary or sources packages from an usual DEBIAN package directory structure on disk.
 ``debbie`` use [edgar](https://github.com/crownedgrouse/edgar) for Gnu AR format, and [swab](https://github.com/crownedgrouse/swab) for fakeroot or Uid/Gid setting. 
-``debbie`` is *FULL* Erlang, and no external command is done, allowing to create DEBIAN packages on any plateform where Erlang can run.
+``debbie`` is *FULL* Erlang, and no external command is done, allowing to create DEBIAN packages on any platform where Erlang can run.
 An Erlang equivalent to ``dpkg-deb -Zgzip --build dir/ ``
 
 No need of a DEBIAN machine or VM, but obviously, only cross-compiled or multi-platform applications must be used if your local platform is incompatible with your target platform... ``debbie`` is not magic !
