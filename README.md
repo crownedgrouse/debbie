@@ -7,6 +7,7 @@
 ``debbie`` is an Erlang module that creates DEBIAN binary or sources packages from an usual DEBIAN package directory structure on disk.
 ``debbie`` use [edgar](https://github.com/crownedgrouse/edgar) for Gnu AR format, and [swab](https://github.com/crownedgrouse/swab) for fakeroot or Uid/Gid setting. 
 ``debbie`` is *FULL* Erlang, and no external command is done, allowing to create DEBIAN packages on any plateform where Erlang can run.
+An Erlang equivalent to ``dpkg-deb -Zgzip --build dir/ ``
 
 No need of a DEBIAN machine or VM, but obviously, only cross-compiled or multi-platform applications must be used if your local platform is incompatible with your target platform... ``debbie`` is not magic !
 
@@ -22,7 +23,7 @@ tree /path/to/my/debian/structure/
 ├── DEBIAN
 │   └── control
 ├── etc
-│   └── myapp.ini
+│   └── myapp.conf
 └── usr
     └── bin
         └── myapp
@@ -37,6 +38,28 @@ debbie:fy([{root_path, "/path/to/my/debian/structure/"}]).
 ```
 
 The file ``debian.deb`` is created in ``/path/to/my/debian/structure/`` directory.
+
+## Demo ##
+
+A Debian structure is ready in ``priv/`` directory, with a simple ``helloworld`` application.
+Simply run in your Erlang Shell :
+
+```
+debbie:fy([{root_path, "priv/"}]).
+```
+Then, under root, you can test the debian package by installing it :
+
+```
+#> dpkg -i priv/debian.deb
+#> helloworld
+Hello world !
+```
+Then, removing this dummy package :
+
+```
+dpkg -r helloworld
+
+```
 
 ## Limitation ##
 
