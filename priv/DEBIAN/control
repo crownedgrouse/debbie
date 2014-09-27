@@ -1,0 +1,8 @@
+Package: helloworld
+Version: 1.0.0-1
+Section: misc
+Priority: optional
+Architecture: all
+Maintainer: Eric Pailleau <debbie@crownedgrouse.com>
+Description: Simple Hello World example
+  Simple shell script echoing Hello World.
