@@ -7,4 +7,5 @@ include erlang.mk
 
 clean:: 
 	-@find . -type f -name \*~ -delete
+	-@rm -f priv/debian.deb
 
