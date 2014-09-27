@@ -1,0 +1,14 @@
+.eunit
+deps
+logs
+misc
+*.o
+*.beam
+*.plt
+erl_crash.dump
+*~
+*.html
+edoc-info
+*.css
+doc/erlang.png
+.erlang.mk.packages.v2

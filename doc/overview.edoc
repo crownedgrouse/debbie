@@ -1,0 +1,44 @@
+@author Eric Pailleau <debbie@crownedgrouse.com>
+@copyright 2014 crownedgrouse.com
+@version 0.1.0
+@title Welcome to the debbie module documentation !
+@doc `debbie' - .DEB Built In Erlang
+
+== Preamble ==
+Many projects are already creating Debian packages in the Erlang community.
+All, as far I know, are using Makefiles, shell script and external commands (dh_* etc.) to build the final Debian package.
+Debian packages are, briefly, only compressed tarball in a Gnu Ar archive, with root UID/GID.
+First steps was to create `swab' and `edgar' modules to do so.
+
+== Abstract ==
+
+`debbie' can :
+<ul>
+    <li>Create a Debian sources or binary package from a valid usual Debian directory structure, without any external command.</li>
+    <li>Set user specific UID/GID and user/group names in data.tar.gz file, or otherwise default 0/root. (no need of `fakeroot' command).</li>
+</ul>
+
+`debbie' does only a few control before creating the package, mainly checking the presence of a `control' file and at least a directory to pack in data.tar.gz. `debbie' is only a full Erlang .deb packager, and trust you. It's up to you or to another module/application to create a valid Debian directory structure...
+
+== Quality ==
+
+Dialyzer is used to insure the maximum quality.
+If however you find a bug, please signal it on the GitHub page by opening an issue ticket, or better, fix it and propose a Pull Request.
+Features addition are welcome too.
+
+== Usages ==
+
+Only a single function is exported from `debbie' module : fy/1 .
+
+This function need a list of tuples, with at least a mandatory one : `{root_path, "/path/to/your/debian/structure/"}' .
+
+Other optional tuples are :
+
+`{debversion, string()}' : Version of the .deb file (not the version of your application !). 
+Use this tuple only if you know what your are doing, or never complain !
+
+`{user, {integer(), string()}}' : User to set on all files in data.tar.gz. Second tuple argument is another tuple : {UID, Username}.
+
+`{group, {integer(), string()}}' : Group to set on all files in data.tar.gz. Second tuple argument is another tuple : {GID, groupname}.
+
+

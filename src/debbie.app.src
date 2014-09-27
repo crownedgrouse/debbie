@@ -1,0 +1,12 @@
+{application, debbie,
+ [
+  {description, ".DEB Built In Erlang"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {env, [{user, {0, "root"}}, {group, {0,"root"}}]},
+  {modules, []}
+ ]}.
