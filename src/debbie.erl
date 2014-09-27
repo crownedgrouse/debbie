@@ -34,14 +34,14 @@ fy(C) when is_list(C) ->
                          TDB = integer_to_list(erlang:phash2({self(),calendar:local_time()})),
                          try
                             % Define pathes
-                            RootPath    = check_path(root_path, proplists:get_value(root_path, C)),
+                            RootPath    = check_path(root_path, filename:absname(proplists:get_value(root_path, C))),
                             DebianPath  = case filelib:is_dir(filename:join(RootPath, "debian")) of
                                                 false ->  filename:join(RootPath, "DEBIAN");
                                                 true  ->  filename:join(RootPath, "debian")
                                           end,
                             ControlFile = filename:join(DebianPath, "control"),
                             % Define variables
-                            DebVersion  = proplists:get_value(debversion, C, "2.0"),
+                            DebVersion  = proplists:get_value(debversion, C, "2.0\n"),
                             User        = proplists:get_value(user, C, {0, "root"}),
                             Group       = list_to_tuple(lists:reverse(tuple_to_list(proplists:get_value(group, C, {0, "root"})))), % swab syntax
                             % Check presence of control file (at least)
