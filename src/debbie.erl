@@ -60,7 +60,7 @@ fy(C) when is_list(C) ->
                             % Creating .deb
                             Deb         = deb_pack(TmpDir),
                             % Moving .deb to RootPath
-                            ResFile     = deb_move(Deb, RootPath),
+                            _ResFile     = deb_move(Deb, RootPath),
                             ok
                          catch 
                             throw:Term -> {error, Term}

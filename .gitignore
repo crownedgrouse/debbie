@@ -12,3 +12,4 @@ edoc-info
 *.css
 doc/erlang.png
 .erlang.mk.packages.v2
+ebin
