@@ -14,6 +14,8 @@ No need of a DEBIAN machine or VM, but obviously, only cross-compiled or multi-p
 No need to have root privilege, neither ``fakeroot`` command, UID/GID are modified in embedded TAR files.
 Specific global non-root UID/GID and user/group names can also be set to data packed in data.tar.gz, otherwise default is set to 0/root.
 
+TIP : For easier integration in scripts, please see also [debut](https://github.com/crownedgrouse/debut) , which will also rename the debian package to valid DEBIAN package name for you ...
+
 ## Example ##
 
 Considere this below *trivial* DEBIAN binary package structure for 'myapp' application :
@@ -63,7 +65,7 @@ dpkg -r helloworld
 
 ## Limitation ##
 
-Only few controls is done : presence of ``control`` file and something to pack, i.e. at least another directory than DEBIAN/debian under root path.
+Only few controls are done : presence of ``control`` file and something to pack, i.e. at least another directory than DEBIAN/debian under root path.
 No attempt is done to check if control files are valid.
 It's up to you, or another module/application, to create a valid DEBIAN package structure.
 
