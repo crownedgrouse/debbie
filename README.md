@@ -14,7 +14,7 @@ No need of a DEBIAN machine or VM, but obviously, only cross-compiled or multi-p
 No need to have root privilege, neither ``fakeroot`` command, UID/GID are modified in embedded TAR files.
 Specific global non-root UID/GID and user/group names can also be set to data packed in data.tar.gz, otherwise default is set to 0/root.
 
-TIP : For easier integration in scripts, please see also [debut](https://github.com/crownedgrouse/debut) , which will also rename the debian package to valid DEBIAN package name for you ...
+TIP : For easier integration in scripts, please see also [debut](https://github.com/crownedgrouse/debut) , which will also rename the package to valid DEBIAN package name for you ...
 
 ## Example ##
 
