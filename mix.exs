@@ -18,8 +18,6 @@ defmodule Edgar.Mixfile do
 
   defp deps() do
     [
-      {:edgar,  "~> 1.0"},
-      {:swab,   "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
@@ -31,7 +29,7 @@ defmodule Edgar.Mixfile do
   defp package() do
     [
       # These are the default files included in the package
-      files: ["src", "doc", "priv", "mix.exs", "README.md", "LICENSE", "Makefile", "erlang.mk", "lock.mk", "rebar.config"],
+      files: ["src", "doc", "priv", "LICENSE", "mix.exs", "README.md", "Makefile", "erlang.mk", "lock.mk", "rebar.config"],
       maintainers: ["Eric Pailleau"],
       licenses: ["ISC"],
       links: %{"GitHub" => "https://github.com/crownedgrouse/debbie"}
