@@ -8,5 +8,9 @@
                   stdlib
                  ]},
   {env, []},
-  {modules, []}
+  {modules, []},
+  {pkg_name,"debbie"},
+  {links,[{"Github","https://github.com/crownedgrouse/debbie"},
+          {"Wiki","https://github.com/crownedgrouse/debbie/wiki"}]}
+
  ]}.
