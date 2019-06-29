@@ -10,6 +10,7 @@
   {env, []},
   {modules, []},
   {pkg_name,"debbie"},
+  {licenses,["ISC"]},
   {links,[{"Github","https://github.com/crownedgrouse/debbie"},
           {"Wiki","https://github.com/crownedgrouse/debbie/wiki"}]}
 
